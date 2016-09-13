@@ -12,7 +12,7 @@ public class User {
     private int age;
 
     public User(String name, String lastName, String userName, String password,int age){
-        this.setName(name);
+        this.setNaw     me(name);
         this.setLastName(lastName);
         this.setUserName(userName);
         this.setPassword(password);

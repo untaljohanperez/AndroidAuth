@@ -8,28 +8,25 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.programacion.movil.estemanp.androidmvcapplication.Controller.ApplicationController;
+import com.programacion.movil.estemanp.androidmvcapplication.Controller.ApplicationControllerSingleton;
 import com.programacion.movil.estemanp.androidmvcapplication.R;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText userName;
     EditText password;
-    ApplicationController appController;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        appController =(ApplicationController)getApplication();
-
         userName=(android.widget.EditText) this.findViewById(R.id.editUsername);
         password=(android.widget.EditText) this.findViewById(R.id.editPassword);
     }
 
     public void login(View view) {
-        if(appController.isValidUser(userName.getText().toString(),password.getText().toString())) {
+        if(ApplicationControllerSingleton.getInstance().isValidUser(userName.getText().toString(),password.getText().toString())) {
             Intent intent = new Intent(this, LandingActivity.class);
             startActivity(intent);
         }else{

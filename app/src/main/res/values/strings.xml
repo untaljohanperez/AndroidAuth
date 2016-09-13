@@ -2,5 +2,11 @@
     <string name="app_name">AndroidMVCApplication</string>
     <string name="hint_username">Usuario</string>
     <string name="btn_login">Login</string>
+    <string name="btn_singUp">Sing up</string>
+    <string name="btn_singIn">Sing in</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="hint_apellido">Apellido</string>
+    <string name="hint_edad">Edad</string>
+    <string name="hint_usuario">Usuario</string>
     <string name="hint_password">Contraseña</string>
 </resources>
