@@ -5,6 +5,7 @@ package com.programacion.movil.estemanp.androidmvcapplication.Domain;
  */
 public class User {
 
+    private int id;
     private String name;
     private String lastName;
     private String userName;
@@ -12,7 +13,7 @@ public class User {
     private int age;
 
     public User(String name, String lastName, String userName, String password,int age){
-        this.setNaw     me(name);
+        this.setName(name);
         this.setLastName(lastName);
         this.setUserName(userName);
         this.setPassword(password);
@@ -57,5 +58,13 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
