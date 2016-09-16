@@ -6,11 +6,13 @@
     tools:context="co.com.moviesathome.View.RegisterActivity">
 
     <TextView
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sing up"
         android:textAlignment="center"
-        android:textSize="50sp"/>
+        android:textSize="50sp"
+        android:textColor="@color/colorPrimary"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,7 +32,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editNombre"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:hint="@string/hint_nombre"/>
+                android:hint="@string/hint_nombre"
+                android:inputType="textPersonName"/>
 
 
             <EditText
@@ -38,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editApellido"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:hint="@string/hint_apellido"/>
+                android:hint="@string/hint_apellido"
+                android:inputType="textPersonName"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -54,7 +58,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editUsuario"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:hint="@string/hint_usuario"/>
+                android:hint="@string/hint_usuario"
+                android:inputType="text"/>
 
 
             <EditText
@@ -80,7 +85,8 @@
                 android:background="@color/colorButton"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:id="@+id/btnSingUp"
-                android:onClick="singUp"/>
+                android:onClick="singUp"
+                android:textSize="18dp"/>
 
         </LinearLayout>
 

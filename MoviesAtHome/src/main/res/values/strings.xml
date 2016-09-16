@@ -4,11 +4,11 @@
     <string name="btn_login">Login</string>
     <string name="btn_singUp">Sing up</string>
     <string name="btn_singIn">Sing in</string>
-    <string name="hint_nombre">Nombre</string>
-    <string name="hint_apellido">Apellido</string>
-    <string name="hint_edad">Edad</string>
-    <string name="hint_usuario">Usuario</string>
-    <string name="hint_password">Contraseña</string>
+    <string name="hint_nombre">Name</string>
+    <string name="hint_apellido">Last Name</string>
+    <string name="hint_edad">Age</string>
+    <string name="hint_usuario">UserName</string>
+    <string name="hint_password">Password</string>
     <string name="application_name">Movies At Home</string>
     <string name="welcome">Welcome</string>
     <string name="ok">Ok</string>

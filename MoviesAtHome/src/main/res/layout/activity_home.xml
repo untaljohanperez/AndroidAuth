@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.homeActivity">
+    tools:context="co.com.moviesathome.View.homeActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -11,18 +11,40 @@
         android:text="Home"
         android:textAlignment="center"
         android:textSize="50sp"/>
+    
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo2"
+        android:layout_gravity="center"/>
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Sing in"
-        android:onClick="singIn"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        >
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Sing up"
-        android:onClick="singUpp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sing in"
+            android:onClick="singIn"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:background="@color/colorButton2"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sing up"
+            android:onClick="singUpp"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:background="@color/colorButton"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>
