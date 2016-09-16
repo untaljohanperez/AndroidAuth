@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">AndroidMVCApplication</string>
+    <string name="hint_username">Usuario</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_singUp">Sing up</string>
+    <string name="btn_singIn">Sing in</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="hint_apellido">Apellido</string>
+    <string name="hint_edad">Edad</string>
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="application_name">Movies At Home</string>
+    <string name="welcome">Welcome</string>
+    <string name="ok">Ok</string>
+    <string name="fail_login">Incorrect user name or password</string>
+    <string name="incorrect_passwords">Incorrect passwords</string>
+    <string name="username_no_valid">User name no valid</string>
+    <string name="success_registry">Success registry</string>
+    <string name="error">There was an error</string>
+
+</resources>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="co.com.moviesathome.View.RegisterActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sing up"
+        android:textAlignment="center"
+        android:textSize="50sp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editNombre"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:hint="@string/hint_nombre"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editApellido"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:hint="@string/hint_apellido"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editEdad"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:hint="@string/hint_edad"
+                android:inputType="number"
+               />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editUsuario"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:hint="@string/hint_usuario"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editPassword1"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editPassword2"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_singUp"
+                android:background="@color/colorButton"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:id="@+id/btnSingUp"
+                android:onClick="singUp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
