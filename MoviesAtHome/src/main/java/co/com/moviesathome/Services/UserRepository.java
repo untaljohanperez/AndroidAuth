@@ -9,6 +9,7 @@ import java.util.List;
 
 import co.com.moviesathome.Domain.User;
 import co.com.moviesathome.Util.DBHelper;
+import static co.com.moviesathome.DataContract.UserContract.UserEntry.*;
 
 /**
  * Created by kedwin.perez on 16/09/2016.
@@ -24,12 +25,12 @@ public class UserRepository {
     {
         try {
             ContentValues contentValues = new ContentValues();
-            contentValues.put(dbHelper.USERS_COLUMN_NAME, user.getName());
-            contentValues.put(dbHelper.USERS_COLUMN_LASTNAME, user.getLastName());
-            contentValues.put(dbHelper.USERS_COLUMN_USERNAME, user.getUserName());
-            contentValues.put(dbHelper.USERS_COLUMN_PASSWORD, user.getPassword());
-            contentValues.put(dbHelper.USERS_COLUMN_AGE, user.getAge());
-            long a = dbHelper.db.insert(dbHelper.USERS_TABLE_NAME, null, contentValues);
+            contentValues.put(USERS_COLUMN_NAME, user.getName());
+            contentValues.put(USERS_COLUMN_LASTNAME, user.getLastName());
+            contentValues.put(USERS_COLUMN_USERNAME, user.getUserName());
+            contentValues.put(USERS_COLUMN_PASSWORD, user.getPassword());
+            contentValues.put(USERS_COLUMN_AGE, user.getAge());
+            long a = dbHelper.db.insert(USERS_TABLE_NAME, null, contentValues);
 
             User user2 = getUserByUserName(user.getUserName());
             return true;
@@ -43,8 +44,8 @@ public class UserRepository {
         User user = null;
         try {
             Cursor query =  dbHelper.db.rawQuery("SELECT * FROM "
-                            + dbHelper.USERS_TABLE_NAME
-                            + " WHERE " + dbHelper.USERS_COLUMN_USERNAME + " = '" + userName + "'"
+                            + USERS_TABLE_NAME
+                            + " WHERE " + USERS_COLUMN_USERNAME + " = '" + userName + "'"
                     , null );
             query.moveToFirst();
 
@@ -61,9 +62,9 @@ public class UserRepository {
         User user = null;
         try {
             Cursor query =  dbHelper.db.rawQuery("SELECT * FROM "
-                            + dbHelper.USERS_TABLE_NAME
-                            + " WHERE " + dbHelper.USERS_COLUMN_USERNAME + " = '" + userName + "'"
-                            + " AND " + dbHelper.USERS_COLUMN_PASSWORD + " = '" + password + "'"
+                            + USERS_TABLE_NAME
+                            + " WHERE " + USERS_COLUMN_USERNAME + " = '" + userName + "'"
+                            + " AND " + USERS_COLUMN_PASSWORD + " = '" + password + "'"
                     , null );
             query.moveToFirst();
 
@@ -80,8 +81,8 @@ public class UserRepository {
         List<User> users = new ArrayList<User>();
         try {
             Cursor query =  dbHelper.db.rawQuery("SELECT * FROM "
-                            + dbHelper.USERS_TABLE_NAME
-                            + " ORDER BY " + DBHelper.USERS_COLUMN_NAME
+                            + USERS_TABLE_NAME
+                            + " ORDER BY " + USERS_COLUMN_NAME
                             , null );
             query.moveToFirst();
 
@@ -97,12 +98,12 @@ public class UserRepository {
     private User mapUser(Cursor query){
         User user = new User();
         try {
-            user.setId(query.getInt(query.getColumnIndex(dbHelper.USERS_COLUMN_ID)));
-            user.setName(query.getString(query.getColumnIndex(dbHelper.USERS_COLUMN_NAME)));
-            user.setLastName(query.getString(query.getColumnIndex(dbHelper.USERS_COLUMN_LASTNAME)));
-            user.setUserName(query.getString(query.getColumnIndex(dbHelper.USERS_COLUMN_USERNAME)));
-            user.setPassword(query.getString(query.getColumnIndex(dbHelper.USERS_COLUMN_PASSWORD)));
-            user.setAge(query.getInt(query.getColumnIndex(dbHelper.USERS_COLUMN_AGE)));
+            user.setId(query.getInt(query.getColumnIndex(USERS_COLUMN_ID)));
+            user.setName(query.getString(query.getColumnIndex(USERS_COLUMN_NAME)));
+            user.setLastName(query.getString(query.getColumnIndex(USERS_COLUMN_LASTNAME)));
+            user.setUserName(query.getString(query.getColumnIndex(USERS_COLUMN_USERNAME)));
+            user.setPassword(query.getString(query.getColumnIndex(USERS_COLUMN_PASSWORD)));
+            user.setAge(query.getInt(query.getColumnIndex(USERS_COLUMN_AGE)));
         }catch(Exception e){
             System.out.println(e.toString());
         }
@@ -112,14 +113,7 @@ public class UserRepository {
     private List<User> mapUsers(Cursor query) {
         List<User> users = new ArrayList<User>();
         for(query.moveToFirst(); !query.isAfterLast(); query.moveToNext()){
-            User user = new User();
-            user.setId(query.getInt(query.getColumnIndex(dbHelper.USERS_COLUMN_ID)));
-            user.setName(query.getString(query.getColumnIndex(dbHelper.USERS_COLUMN_NAME)));
-            user.setLastName(query.getString(query.getColumnIndex(dbHelper.USERS_COLUMN_LASTNAME)));
-            user.setUserName(query.getString(query.getColumnIndex(dbHelper.USERS_COLUMN_USERNAME)));
-            user.setPassword(query.getString(query.getColumnIndex(dbHelper.USERS_COLUMN_PASSWORD)));
-            user.setAge(query.getInt(query.getColumnIndex(dbHelper.USERS_COLUMN_AGE)));
-            users.add(user);
+            users.add(mapUser(query));
         }
         return users;
     }
