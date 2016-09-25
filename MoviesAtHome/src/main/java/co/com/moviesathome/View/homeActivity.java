@@ -5,8 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.programacion.movil.estemanp.moviesathome.R;
-
+import co.com.moviesathome.R;
 import co.com.moviesathome.Services.UserRepository;
 import co.com.moviesathome.Util.DBHelper;
 

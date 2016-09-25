@@ -5,6 +5,7 @@ import android.database.Cursor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import co.com.moviesathome.DataContract.PeliculaContract;
 import co.com.moviesathome.Domain.Pelicula;
@@ -12,6 +13,8 @@ import co.com.moviesathome.Domain.User;
 import co.com.moviesathome.Util.DBHelper;
 import static co.com.moviesathome.DataContract.PeliculaContract.PeliculaEntry.*;
 import static co.com.moviesathome.DataContract.PeliculaContract.PeliculaEntry.PELICULAS_DURACION;
+import static co.com.moviesathome.DataContract.UserContract.UserEntry.USERS_COLUMN_USERNAME;
+import static co.com.moviesathome.DataContract.UserContract.UserEntry.USERS_TABLE_NAME;
 
 /**
  * Created by kedwin.perez on 16/09/2016.
@@ -26,13 +29,16 @@ public class PeliculaRepository {
     public boolean insertPelicula(Pelicula pelicula)
     {
         try {
+
             ContentValues contentValues = new ContentValues();
+            contentValues.put(PELICULAS_ID_ID, UUID.randomUUID().toString());
             contentValues.put(PELICULAS_NAME, pelicula.getName());
             contentValues.put(PELICULAS_DURACION, pelicula.getDuracion());
             contentValues.put(PELICULAS_SINOPSIS, pelicula.getSinopsis());
             contentValues.put(PELICULAS_AVATAR_URI, pelicula.getAvatarUri());
             contentValues.put(PELICULAS_RANKING, pelicula.getAvatarUri());
             long a = dbHelper.db.insert(PELICULAS_TABLE_NAME, null, contentValues);
+            List<Pelicula> p = getAllPeliculas();
             return true;
         }catch(Exception e){
             System.out.println(e.toString());
@@ -58,8 +64,22 @@ public class PeliculaRepository {
         return pelicula;
     }
 
+    public Cursor getAllPeliculasCursor() {
+        try {
+            Cursor query =  dbHelper.db.rawQuery("SELECT * FROM "
+                            + PELICULAS_TABLE_NAME
+                            + " ORDER BY " + PELICULAS_NAME
+                    , null );
+            query.moveToFirst();
+            return query;
+        }catch(Exception e){
+            System.out.println(e.toString());
+        }
+        return null;
+    }
+
     public List<Pelicula> getAllPeliculas() {
-        List<Pelicula> users = new ArrayList<>();
+        List<Pelicula> peliculas = new ArrayList<>();
         try {
             Cursor query =  dbHelper.db.rawQuery("SELECT * FROM "
                             + PELICULAS_TABLE_NAME
@@ -68,12 +88,29 @@ public class PeliculaRepository {
             query.moveToFirst();
 
             if(query.getCount() > 0){
-                users = mapPeliculas(query);
+                peliculas = mapPeliculas(query);
             }
         }catch(Exception e){
             System.out.println(e.toString());
         }
-        return users;
+        return peliculas;
+    }
+
+    public Pelicula getPeliculaById(int peliculaId){
+        try {
+            Cursor query =  dbHelper.db.rawQuery("SELECT * FROM "
+                            + PELICULAS_TABLE_NAME
+                            + " WHERE " + PELICULAS_ID + " = " + peliculaId
+                    , null );
+            query.moveToFirst();
+
+            if(query.getCount() > 0){
+                return mapPelicula(query);
+            }
+        }catch(Exception e){
+            System.out.println(e.toString());
+        }
+        return null;
     }
 
     private Pelicula mapPelicula(Cursor query){

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.programacion.movil.estemanp.moviesathome">
+    package="co.com.moviesathome">
 
     <application
         android:name="co.com.moviesathome.Controller.ApplicationController"
@@ -19,6 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="co.com.moviesathome.View.PeliculasActivity"
+            android:label="@string/title_activity_peliculas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.com.moviesathome.View.PeliculasDetailActivity"
+            android:label="@string/title_activity_peliculas_detail"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

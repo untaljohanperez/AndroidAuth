@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.programacion.movil.estemanp.moviesathome.R;
 
 import java.util.List;
 
 import co.com.moviesathome.Domain.User;
+import co.com.moviesathome.R;
 import co.com.moviesathome.Services.UserRepository;
 import co.com.moviesathome.Util.DBHelper;
 

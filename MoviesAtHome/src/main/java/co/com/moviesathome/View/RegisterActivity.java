@@ -10,11 +10,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.programacion.movil.estemanp.moviesathome.R;
-
 import co.com.moviesathome.Controller.ApplicationController;
 import co.com.moviesathome.Controller.ApplicationControllerSingleton;
 import co.com.moviesathome.Domain.User;
+import co.com.moviesathome.R;
 import co.com.moviesathome.Services.UserRepository;
 import co.com.moviesathome.Util.DBHelper;
 

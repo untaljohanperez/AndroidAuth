@@ -1,7 +1,7 @@
-package com.programacion.movil.estemanp.androidmvcapplication.Clases;
+package co.com.moviesathome.Util;
 
 /**
- * Created by Juanes on 15/09/2016.
+ * Created by  on 15/09/2016.
  */
 import android.content.Context;
 import android.database.Cursor;
@@ -9,7 +9,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
-import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
-import com.programacion.movil.estemanp.moviesathome.R;
+
+import co.com.moviesathome.R;
+
 import static co.com.moviesathome.DataContract.PeliculaContract.PeliculaEntry.*;
 
 
@@ -48,7 +49,7 @@ public class PeliculasCursorAdapter extends CursorAdapter {
         nameText.setText(name);
         Glide
                 .with(context)
-                .load(Uri.parse("file:///android_asset/" + avatarUri))
+                .load(Uri.parse("android.resource://co.com.moviesathome/drawable/" + avatarUri))
                 .asBitmap()
                 .error(R.drawable.ic_account_circle)
                 .centerCrop()

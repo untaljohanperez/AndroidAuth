@@ -8,6 +8,7 @@ public class PeliculaContract {
     public static abstract class PeliculaEntry implements BaseColumns {
         public static final String PELICULAS_TABLE_NAME ="peliculas";
 
+        public static final String PELICULAS_ID_ID = "_id";
         public static final String PELICULAS_ID = "id";
         public static final String PELICULAS_NAME = "name";
         public static final String PELICULAS_DURACION = "duracion";
