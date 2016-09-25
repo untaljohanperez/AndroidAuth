@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     ApplicationController appController;
     DBHelper dbHelper;
     UserRepository userRepository;
+    PeliculaRepository peliculaRepository;
     EditText userName;
     EditText password;
 
@@ -37,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         appController = (ApplicationController) getApplication();
         dbHelper = new DBHelper(getApplicationContext());
         userRepository = new UserRepository(dbHelper);
+        peliculaRepository = new PeliculaRepository(dbHelper);
     }
 
     public void login(View view) {
@@ -66,19 +68,20 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void mockData() {
+        if(peliculaRepository.getAllPeliculas().size() != 0) return;
+
         mockPeliculas(new Pelicula("The Avengers", "142 min", "es una película estadounidense de superhéroes de 2012 escrita y dirigida por Joss Whedon. Fue producida por Marvel Studios y distribuida por Walt Disney Pictures, y basada en el cómic homónimo de Marvel Comics. ",
-                "5","avenger.jpg"));
+                5.0,"avenger.jpg"));
         mockPeliculas(new Pelicula("Los Croods", "98 min","Los Croods es una película estadounidense de animación de aventura y comedia producida por los estudios Dreamworks Animation y distribuida por 20th Century Fox, de hecho, la primera con este tipo de alianza",
-                "3",
+                3.5,
                 "croods.jpg"));
         mockPeliculas(new Pelicula("El Conjuro", "112 min",
                 "The Conjuring (también conocida como The Warren Files, titulada Expediente Warren en España y El conjuro en Hispanoamérica) es una película de terror de 2013 dirigida por James Wan y protagonizada por Vera Farmiga y Patrick Wilson en el papel de los parapsicólogos Lorraine y Ed Warren.",
-                "4",
+                4.0,
                 "conjuro.jpg"));
     }
     public boolean mockPeliculas(Pelicula pelicula) {
         try {
-            PeliculaRepository peliculaRepository = new PeliculaRepository(dbHelper);
             return peliculaRepository.insertPelicula(pelicula);
         }catch (Exception e) {
             System.out.println(e.getStackTrace());

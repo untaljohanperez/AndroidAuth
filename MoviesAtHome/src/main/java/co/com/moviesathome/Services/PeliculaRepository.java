@@ -36,7 +36,7 @@ public class PeliculaRepository {
             contentValues.put(PELICULAS_DURACION, pelicula.getDuracion());
             contentValues.put(PELICULAS_SINOPSIS, pelicula.getSinopsis());
             contentValues.put(PELICULAS_AVATAR_URI, pelicula.getAvatarUri());
-            contentValues.put(PELICULAS_RANKING, pelicula.getAvatarUri());
+            contentValues.put(PELICULAS_RANKING, pelicula.getRanking());
             long a = dbHelper.db.insert(PELICULAS_TABLE_NAME, null, contentValues);
             List<Pelicula> p = getAllPeliculas();
             return true;
@@ -113,13 +113,28 @@ public class PeliculaRepository {
         return null;
     }
 
+    public boolean updateRating(int idPelicula, float rating){
+        try {
+            Cursor query =  dbHelper.db.rawQuery("UPDATE "+ PELICULAS_TABLE_NAME
+                            + " SET " + PELICULAS_RANKING + " = " + rating
+                            + " WHERE " + PELICULAS_ID + " = " + idPelicula
+                    , null );
+            query.moveToFirst();
+
+            return true;
+        }catch(Exception e){
+            System.out.println(e.toString());
+        }
+        return false;
+    }
+
     private Pelicula mapPelicula(Cursor query){
         Pelicula pelicula = new Pelicula();
         try {
             pelicula.setId(query.getInt(query.getColumnIndex(PELICULAS_ID)));
             pelicula.setDuracion(query.getString(query.getColumnIndex(PELICULAS_DURACION)));
             pelicula.setSinopsis(query.getString(query.getColumnIndex(PELICULAS_SINOPSIS)));
-            pelicula.setRanking(query.getString(query.getColumnIndex(PELICULAS_RANKING)));
+            pelicula.setRanking(query.getDouble(query.getColumnIndex(PELICULAS_RANKING)));
             pelicula.setAvatarUri(query.getString(query.getColumnIndex(PELICULAS_AVATAR_URI)));
         }catch(Exception e){
             System.out.println(e.toString());

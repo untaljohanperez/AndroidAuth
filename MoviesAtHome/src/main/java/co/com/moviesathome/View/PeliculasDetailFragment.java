@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ public class PeliculasDetailFragment extends Fragment {
     private ImageView mAvatar;
     private TextView mSinopsis;
     private TextView mDuracion;
-    private TextView mRanking;
+    private RatingBar mRatingBar;
     DBHelper dbHelper;
     PeliculaRepository peliculaRepository;
 
@@ -64,7 +65,20 @@ public class PeliculasDetailFragment extends Fragment {
         mAvatar = (ImageView)getActivity().findViewById(R.id.iv_avatar);
         mSinopsis = (TextView)root.findViewById(R.id.tv_sinopsis);
         mDuracion = (TextView)root.findViewById(R.id.tv_duracion);
-        mRanking = (TextView)root.findViewById(R.id.tv_rankig);
+        mRatingBar = (RatingBar) root.findViewById(R.id.ratingBar);
+
+        mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+                if(fromUser){
+                    if(peliculaRepository.updateRating(mPeliculasId ,rating)){
+                        Toast.makeText(getContext(), String.valueOf(rating), Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(getContext(), R.string.error, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
 
         dbHelper = new DBHelper(getContext());
         peliculaRepository = new PeliculaRepository(dbHelper);
@@ -93,15 +107,15 @@ public class PeliculasDetailFragment extends Fragment {
 
     }
 
-    private void showPeliculas(Pelicula peliculas) {
-        mCollapsingView.setTitle(peliculas.getName());
+    private void showPeliculas(Pelicula pelicula) {
+        mCollapsingView.setTitle(pelicula.getName());
         Glide.with(this)
-                .load(Uri.parse("file:///android_asset/" + peliculas.getAvatarUri()))
+                .load(Uri.parse("file:///android_asset/" + pelicula.getAvatarUri()))
                 .centerCrop()
                 .into(mAvatar);
-        mDuracion.setText(peliculas.getDuracion());
-        mSinopsis.setText(peliculas.getSinopsis());
-        mRanking.setText(peliculas.getRanking());
+        mDuracion.setText(pelicula.getDuracion());
+        mSinopsis.setText(pelicula.getSinopsis());
+        mRatingBar.setRating((float)pelicula.getRanking());
     }
 
     private void showLoadError() {

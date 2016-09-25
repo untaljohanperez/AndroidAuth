@@ -15,12 +15,12 @@ public class Pelicula {
     private String name;
     private String duracion;
     private String sinopsis;
-    private String ranking;
+    private double ranking;
     private String avatarUri;
 
     public Pelicula(String name,
                     String duracion, String sinopsis,
-                    String ranking, String avatarUri) {
+                    double ranking, String avatarUri) {
         this.name = name;
         this.duracion = duracion;
         this.sinopsis = sinopsis;
@@ -46,7 +46,7 @@ public class Pelicula {
         return sinopsis;
     }
 
-    public String getRanking() {
+    public double getRanking() {
         return ranking;
     }
 
@@ -70,7 +70,7 @@ public class Pelicula {
         this.sinopsis = sinopsis;
     }
 
-    public void setRanking(String ranking) {
+    public void setRanking(double ranking) {
         this.ranking = ranking;
     }
 

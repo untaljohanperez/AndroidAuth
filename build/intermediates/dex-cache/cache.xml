@@ -1,3 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_d839897ddf32e4e098b272877912daecb5c4f4aa.jar" />
+    </item>
+    <item
+        jar="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8b6460fd81e3feef6c1d4f2de32416aea8169b86">
+        <dex dex="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\pre-dexed\debug\instant-run-bootstrap_89335a40d77993ec0bc56dd796a336c4cc695ab0.jar" />
+    </item>
+    <item
+        jar="C:\Users\JohanPerez\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_4283c35f44288e16717a7a479180a9615f2837a0.jar" />
+    </item>
+    <item
+        jar="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.4.0_9b20314291459cbccf8cfedd826bae8f52a2f9c5.jar" />
+    </item>
+    <item
+        jar="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="901289d918f1f7ce75317a48ba91cba0b9990c0d">
+        <dex dex="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\pre-dexed\debug\instant-run_996dff9840cb37f1ca554528bcc6fb01547acb71.jar" />
+    </item>
+    <item
+        jar="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.4.0_7b793c74ae39ce2c0d3b5f410c84b8b978ba0b4e.jar" />
+    </item>
+    <item
+        jar="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_124bec2183daf78ff2b3d785a7030d5c1fce5cf7.jar" />
+    </item>
+    <item
+        jar="C:\Users\JohanPerez\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\pre-dexed\debug\glide-3.7.0_d77113f15ddd2040cd40e5a4c5d040c00d85643c.jar" />
+    </item>
+    <item
+        jar="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.4.0_bb67de90ef4fbbc237275f509c713589db6acd69.jar" />
+    </item>
+    <item
+        jar="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.4.0_8ea4e41d07b6916507a44e3e23fe6dae632c5ba0.jar" />
+    </item>
+    <item
+        jar="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="D:\Projects\AndroidAuth\AndroidAuth\MoviesAtHome\build\intermediates\pre-dexed\debug\com.android.support-design-23.4.0_3d0458737fe66a124942012c45e8ae57ae2a823f.jar" />
+    </item>
+
+</items>

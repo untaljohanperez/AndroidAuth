@@ -44,7 +44,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + PELICULAS_NAME + " TEXT NOT NULL,"
                 + PELICULAS_DURACION + " TEXT NOT NULL,"
                 + PELICULAS_SINOPSIS + " TEXT NOT NULL,"
-                + PELICULAS_RANKING + " TEXT NOT NULL,"
+                + PELICULAS_RANKING + " REAL NOT NULL DEFAULT 0.0,"
                 + PELICULAS_AVATAR_URI + " TEXT )");
     }
 
